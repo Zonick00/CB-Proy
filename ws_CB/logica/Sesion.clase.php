@@ -5,17 +5,16 @@ require_once '../datos/Conexion.clase.php';
 class Sesion extends Conexion {
     private $dni;
     private $clave;
-    function getUsuario() {
-        return $this->usuario;
-    }
-
+    
     function getClave() {
         return $this->clave;
+    }
+    function setClave($clave) {
+        $this->clave = $clave;
     }
     function getDni() {
         return $this->dni;
     }
-
     function setDni($dni) {
         $this->dni = $dni;
     }
