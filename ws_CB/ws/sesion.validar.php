@@ -3,13 +3,13 @@
 require_once '../logica/Sesion.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
-if (! isset($_POST["dni"]) || ! isset($_POST["clave"])){
+if (! isset($_REQUEST["dni"]) || ! isset($_REQUEST["clave"])){
     Funciones::imprimeJSON(500, "Falta completar los datos requeridos", "");
     exit();
 }
 
-$dni = $_POST["dni"];
-$clave = $_POST["clave"];
+$dni = $_REQUEST["dni"];
+$clave = $_REQUEST["clave"];
 try {
     $objSesion = new Sesion();
     $objSesion->setDni($dni);

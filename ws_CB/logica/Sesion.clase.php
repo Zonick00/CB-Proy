@@ -25,9 +25,9 @@ class Sesion extends Conexion {
             $sql = "select * from f_validar_sesion(:p_dni, md5(:p_clave))";
             
             $sentencia = $this->dblink->prepare($sql);
-            $sentencia->bindParam(":p_dni", $this->getDni());
-            $sentencia->bindParam(":p_clave", $this->getClave());
-            //$sentencia->execute(array(":p_dni"=> $this->getDni(), ":p_clave"=> $this->getClave()));
+            //$sentencia->bindParam(":p_dni", $this->getDni());
+            //$sentencia->bindParam(":p_clave", $this->getClave());
+            $sentencia->execute(array(":p_dni"=> $this->getDni(), ":p_clave"=> $this->getClave()));
             return $sentencia->fetch(PDO::FETCH_ASSOC);
 
         } catch (Exception $exc) {
