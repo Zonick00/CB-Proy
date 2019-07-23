@@ -4,7 +4,7 @@ require_once '../logica/Sesion.clase.php';
 require_once '../util/funciones/Funciones.clase.php';
 
 if (! isset($_POST["dni"]) || ! isset($_POST["clave"])){
-    Funciones::imprimeJSON(500, "Falta completar los datos requeridos", "");
+    Funciones::imprimeJSON("Falta completar los datos requeridos", "");
     exit();
 }
 
