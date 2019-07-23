@@ -11,7 +11,6 @@ if (! isset($_POST["dni"]) || ! isset($_POST["clave"])){
 $dni = $_POST["dni"];
 $clave = $_POST["clave"];
 
-
 try {
     $objSesion = new Sesion();
     $objSesion->setDni($dni);
