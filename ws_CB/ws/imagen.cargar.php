@@ -10,7 +10,7 @@ if (! isset($_REQUEST["token"])){
 
 try {
     if (validarToken($_REQUEST["token"])) {
-        echo $_FILES['imagen']['name'];
+        echo "hola";
         $p_nombreImagen = $_FILES["imagen"]["name"];
         $carpeta_destino = '../imagenes/';
         
