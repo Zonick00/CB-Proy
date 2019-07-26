@@ -9,4 +9,4 @@ $carpeta_destino =$_SERVER["DOCUMENT_ROOT"]."/imagenes/";
         
 move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino.$p_nombreImagen);
 
-Funciones::imprimeJSON($carpeta_destino);
+Funciones::imprimeJSON($p_nombreImagen);
