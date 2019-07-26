@@ -10,11 +10,12 @@ if (! isset($_REQUEST["token"])){
 
 try {
     if (validarToken($_REQUEST["token"])) {
+        echo $_FILES['imagen']['name'];
         $p_nombreImagen = $_FILES["imagen"]["name"];
         $carpeta_destino = '../imagenes/';
         
-        move_uploaded_file($_FILES["imagen"]["name"], $carpeta_destino.$p_nombreImagen);
-        echo $_FILES['imagen']['name'];
+        move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino.$p_nombreImagen);
+        
     }
     
 } catch (Exception $exc) {
