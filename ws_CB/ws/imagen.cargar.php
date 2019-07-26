@@ -11,7 +11,7 @@ if (! isset($_REQUEST["token"])){
 try {
     if (validarToken($_REQUEST["token"])) {
         $p_nombreImagen = $_FILES["imagen"]["name"];
-        $carpeta_destino = $_SERVER["DOCUMENT_ROOT"]."/imagenes/";
+        $carpeta_destino = '../imagenes';
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino.$p_nombreImagen);
     }
     
