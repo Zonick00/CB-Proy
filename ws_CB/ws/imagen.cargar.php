@@ -12,7 +12,8 @@ try {
     if (validarToken($_REQUEST["token"])) {
         $p_nombreImagen = $_FILES["imagen"]["name"];
         $carpeta_destino = '../imagenes/';
-        move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino.$p_nombreImagen);
+        
+        move_uploaded_file($_FILES["imagen"]["name"], $carpeta_destino.$p_nombreImagen);
     }
     
 } catch (Exception $exc) {
