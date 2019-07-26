@@ -5,11 +5,8 @@ require_once '../util/funciones/Funciones.clase.php';
 
 
 $p_nombreImagen = $_FILES["imagen"]["name"];
-$carpeta_destino = '../imagenes/';
+$carpeta_destino =$_SERVER["DOCUMENT_ROOT"]."/imagenes/";
         
 move_uploaded_file($_FILES["imagen"]["tmp_name"], $carpeta_destino.$p_nombreImagen);
 
-    
-} catch (Exception $exc) {
-    Funciones::imprimeJSON($exc->getMessage());
-}
+Funciones::imprimeJSON($carpeta_destino);
