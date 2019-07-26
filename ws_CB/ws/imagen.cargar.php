@@ -14,7 +14,7 @@ try {
         $carpeta_destino = '../imagenes/';
         
         move_uploaded_file($_FILES["imagen"]["name"], $carpeta_destino.$p_nombreImagen);
-        echo $_FILES["imagen"]["name"]
+        echo $_FILES['imagen']['name'];
     }
     
 } catch (Exception $exc) {
